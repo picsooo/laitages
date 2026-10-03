@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr" data-version="corporate" data-base="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Nos produits · Laitages du Maghreb</title>
+<meta name="description" content="Catalogue des fromages, crèmes, sauces et poudres de lait Matino.">
+<link rel="icon" href="img/logo-laitages.webp">
+<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="ldm-top"><div class="ldm-wrap"><a href="tel:+213561627001">+213 561 62 70 01</a><span class="hide-s">Zone d’activité, El Achour, Alger</span><a href="mailto:contact@laitagesdumaghreb.com">contact@laitagesdumaghreb.com</a></div></div>
+<header class="ldm-head"><div class="ldm-wrap">
+<a class="ldm-logo" href="index.html" aria-label="Laitages du Maghreb, accueil"><img src="img/logo-laitages.webp" alt="Laitages du Maghreb" width="270" height="160"></a>
+<nav class="ldm-nav" data-nav aria-label="Navigation principale">
+<a href="index.html">Accueil</a><a href="produits.html">Nos produits</a><a href="index.html#qualite">L’entreprise</a><a href="professionnels.html">Professionnels</a><a href="contact.html">Contact</a>
+<a class="ldm-btn ldm-btn--red" href="professionnels.html#distributeur">Devenir distributeur</a>
+</nav>
+<button class="ldm-burger" data-burger aria-label="Menu" aria-expanded="false"><span></span></button>
+</div></header>
+<main>
+
+<section class="ldm-pagehead"><img class="sun" src="img/sun.svg" alt="" aria-hidden="true"><div class="ldm-wrap">
+<div class="ldm-crumbs"><a href="index.html">Accueil</a> / Nos produits</div>
+<h1>Nos produits</h1>
+<p>Toute la gamme Matino, Matino Joy et Lâatra, par famille.</p>
+<div class="ldm-search"><input id="q" type="search" placeholder="Rechercher : gouda, râpé, mayonnaise…" aria-label="Rechercher un produit"></div>
+</div></section>
+<section class="ldm-sec" style="padding-top:24px"><div class="ldm-wrap">
+<div class="ldm-chips" id="chips" role="group" aria-label="Familles"></div>
+<p class="ldm-count" id="count"></p>
+<div class="ldm-grid" id="grid"></div>
+<p class="ldm-note" style="margin-top:28px">Sélection de 30 produits sur les 73 du catalogue actuel. Le site final reprendra l’ensemble des références.</p>
+</div></section>
+</main>
+<footer class="ldm-foot"><div class="ldm-wrap">
+<div class="ldm-foot-grid">
+<div><img src="img/logo-laitages.webp" alt="Laitages du Maghreb"><p style="margin-top:14px;max-width:34ch">Opérateur de l’industrie alimentaire spécialisé dans les laitages : fromages, crèmes, sauces et poudres de lait, sous les marques Matino, Matino Joy et Lâatra.</p></div>
+<div><h4>Produits</h4><a href="produits.html?f=À tartiner">À tartiner</a><a href="produits.html?f=Râpé">Râpé</a><a href="produits.html?f=Poudre de lait">Poudre de lait</a><a href="produits.html?f=Sauce Mayonnaise">Mayonnaise</a></div>
+<div><h4>Société</h4><a href="index.html#qualite">Qualité</a><a href="professionnels.html">Professionnels</a><a href="professionnels.html#distributeur">Distributeurs</a><a href="contact.html">Contact</a></div>
+<div><h4>Nous trouver</h4><p>Zone d’activité, Groupe 665, Lot 01, N°01 et 02, El Achour, Alger</p><a href="tel:+213561627001">+213 561 62 70 01 / 02 / 03 / 05</a><a href="mailto:contact@laitagesdumaghreb.com">contact@laitagesdumaghreb.com</a></div>
+</div>
+<div class="ldm-foot-bottom"><span>© 2026 SARL Laitages du Maghreb</span><span>Maquette Webminds</span></div>
+</div></footer>
+<script src="js/common.js"></script>
+<script src="js/data.js"></script>
+<script>
+window.LDM_card=function(p){
+  var a=document.createElement('a');a.className='ldm-card';a.href='produit.html?id='+p.id;
+  a.innerHTML='<div class="ldm-card-img" data-pimg="'+p.name+'"><img loading="lazy" alt="'+p.name+'" src="'+p.img+'"'+(p.remote?' class="is-remote" onerror="LDM_imgFallback(this)"':'')+'></div><div class="ldm-card-brand">'+p.brand+'</div><h3>'+p.name+'</h3><div class="ldm-card-fmt">'+p.format+'</div>';
+  return a;
+};
+</script>
+<script>
+(function(){
+  var params=new URLSearchParams(location.search);
+  var state={f:params.get('f')||'Tout',b:params.get('b')||'',q:''};
+  var fams=['Tout'];LDM_PRODUCTS.forEach(function(p){if(fams.indexOf(p.cat)<0)fams.push(p.cat);});
+  var chips=document.getElementById('chips'),grid=document.getElementById('grid'),count=document.getElementById('count');
+  fams.forEach(function(f){var b=document.createElement('button');b.className='ldm-chip';b.dataset.f=f;b.textContent=f;b.onclick=function(){state.f=f;state.b='';render();};chips.appendChild(b);});
+  document.getElementById('q').addEventListener('input',function(e){state.q=e.target.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');render();});
+  function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+  function render(){
+    var list=LDM_PRODUCTS.filter(function(p){
+      return (state.f==='Tout'||p.cat===state.f)&&(!state.b||p.brand===state.b)&&(!state.q||norm(p.name+' '+p.cat+' '+p.brand).indexOf(state.q)>-1);
+    });
+    grid.innerHTML='';list.forEach(function(p){grid.appendChild(LDM_card(p));});
+    count.textContent=list.length+' produit'+(list.length>1?'s':'')+(state.b?' · '+state.b:'');
+    chips.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===state.f?'true':'false');});
+  }
+  render();
+})();
+</script>
+</body>
+</html>

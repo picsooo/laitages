@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr" data-version="moderne" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A3570">
+<title>Matino · Laitages du Maghreb · Version moderne</title>
+<link rel="icon" href="../img/logo-laitages.webp">
+<link rel="preload" href="../fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="v2.css">
+</head>
+<body>
+<div class="v-sky" aria-hidden="true"></div>
+<div class="v-sun" id="sun" aria-hidden="true"><img src="../img/sun.svg" alt=""></div>
+
+<header class="v-head">
+<a href="index.html" aria-label="Accueil"><img src="../img/logo-matino.webp" alt="Matino" width="600" height="438"></a>
+<nav aria-label="Navigation"><a class="hide-s" href="#plats">Recettes</a><a class="hide-s" href="#comptoir">Produits</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main>
+<section class="v-hero">
+<div class="v-wrap">
+<div>
+<h1><span class="v-sc">Matino</span>Ça fond, ça file.</h1>
+<p class="v-hero-lead">Les fromages de Laitages du Maghreb, fabriqués à El Achour pour toutes les recettes de la maison.</p>
+<p class="ar" style="margin-top:14px;font-size:20px;color:#FFE6A3">حوّل وصفتك إلى تحفة من المذاق</p>
+</div>
+<div>
+<div class="v-pull" id="pull" aria-label="Pizza interactive : tirez la part vers le haut pour étirer le fromage" role="img">
+<span class="v-pull-hint">Tirez la part vers le haut</span>
+<svg viewBox="0 120 400 260" id="pz">
+<defs>
+<radialGradient id="gCheese" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#FFE48A"/><stop offset="1" stop-color="#F3B63A"/></radialGradient>
+<linearGradient id="gCrust" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B86A"/><stop offset="1" stop-color="#B86E2A"/></linearGradient>
+<clipPath id="cPie"><ellipse cx="200" cy="250" rx="170" ry="80"/></clipPath>
+</defs>
+<ellipse cx="200" cy="268" rx="196" ry="96" fill="#06204A" opacity=".35"/>
+<ellipse cx="200" cy="256" rx="192" ry="92" fill="#F4F7FB"/>
+<ellipse cx="200" cy="256" rx="176" ry="83" fill="none" stroke="#DCE5F1" stroke-width="3"/>
+<g id="pie">
+<ellipse cx="200" cy="254" rx="170" ry="80" fill="#9C5A22"/>
+<ellipse cx="200" cy="250" rx="170" ry="80" fill="url(#gCrust)"/>
+<ellipse cx="200" cy="250" rx="150" ry="68" fill="#C7321C"/>
+<path d="M60 248c10-30 60-58 140-60 80 2 132 26 142 58-6 32-60 60-140 62-82-2-136-28-142-60z" fill="url(#gCheese)"/>
+<g fill="#FFEFB0" opacity=".7"><ellipse cx="140" cy="230" rx="22" ry="8"/><ellipse cx="250" cy="226" rx="26" ry="9"/><ellipse cx="300" cy="262" rx="18" ry="7"/><ellipse cx="110" cy="272" rx="16" ry="6"/></g>
+<g><ellipse cx="160" cy="214" rx="15" ry="7" fill="#D93A2A"/><ellipse cx="160" cy="213" rx="10" ry="4.5" fill="#F06A55"/>
+<ellipse cx="270" cy="248" rx="15" ry="7" fill="#D93A2A"/><ellipse cx="270" cy="247" rx="10" ry="4.5" fill="#F06A55"/>
+<ellipse cx="95" cy="250" rx="13" ry="6" fill="#D93A2A"/><ellipse cx="95" cy="249" rx="8" ry="4" fill="#F06A55"/>
+<ellipse cx="220" cy="196" rx="13" ry="6" fill="#D93A2A"/><ellipse cx="220" cy="195" rx="8" ry="4" fill="#F06A55"/></g>
+<g fill="#2E8B3E"><path d="M120 232c8-10 22-8 26 0-8 8-20 8-26 0z"/><path d="M300 230c8-10 22-8 26 0-8 8-20 8-26 0z"/><path d="M190 214c8-10 22-8 26 0-8 8-20 8-26 0z"/><path d="M240 276c6-9 18-7 22 0-7 7-17 7-22 0z"/></g>
+<path id="hole" d="M200 250 L271.8 322.5 A170 80 0 0 1 128.2 322.5 Z" fill="#F4F7FB"/>
+<path d="M200 250 L271.8 322.5" stroke="#E7B23E" stroke-width="3"/><path d="M200 250 L128.2 322.5" stroke="#E7B23E" stroke-width="3"/>
+</g>
+<g id="strands" fill="none" stroke-linecap="round"></g>
+<g id="slice" style="cursor:grab">
+<ellipse id="sliceShadow" cx="200" cy="318" rx="56" ry="10" fill="#06204A" opacity="0"/>
+<g id="sliceBody">
+<path d="M200 254 L271.8 326.5 A170 80 0 0 1 128.2 326.5 Z" fill="#9C5A22"/>
+<path d="M200 250 L271.8 322.5 A170 80 0 0 1 128.2 322.5 Z" fill="url(#gCrust)"/>
+<path d="M200 252 L258 309 A150 68 0 0 1 142 309 Z" fill="#C7321C"/>
+<path d="M200 252 L256 306 Q230 318 200 317 Q170 318 144 306 Z" fill="url(#gCheese)"/>
+<ellipse cx="205" cy="294" rx="13" ry="6" fill="#D93A2A"/><ellipse cx="205" cy="293" rx="8" ry="4" fill="#F06A55"/>
+<path d="M172 300c6-8 18-6 21 0-6 6-15 6-21 0z" fill="#2E8B3E"/>
+<ellipse cx="226" cy="282" rx="9" ry="4" fill="#FFEFB0" opacity=".8"/>
+</g>
+</g>
+</svg>
+</div>
+<div class="v-meter" aria-live="polite"><b id="cm">0</b><span>cm de fromage étiré. Battez votre record.</span></div>
+</div>
+</div>
+</section>
+
+<div class="v-marquee" aria-hidden="true"><div>Gouda <i>Matino</i> Edam <i>Matino</i> Maasdam <i>Matino</i> Cheddar <i>Matino</i> Mozzarella <i>Matino</i> Camembert <i>Matino</i> Gouda <i>Matino</i> Edam <i>Matino</i> Maasdam <i>Matino</i> Cheddar <i>Matino</i> Mozzarella <i>Matino</i> Camembert <i>Matino</i> </div></div>
+
+<section class="v-sec" id="plats">
+<div class="v-wrap">
+<h2 class="v-h2"><span class="v-sc">Qu’est-ce qu’on cuisine ?</span>Un plat, un Matino.</h2>
+<p class="v-lead">Choisissez ce que vous préparez, on vous dit quel produit sortir du frigo.</p>
+<div class="v-dishes" id="dishes" role="group" aria-label="Plats"></div>
+<div class="v-match" id="match" aria-live="polite"></div>
+</div>
+</section>
+
+<section class="v-sec" id="comptoir" style="padding-bottom:40px">
+<div class="v-wrap">
+<h2 class="v-h2"><span class="v-sc">Le comptoir</span>Chaque fromage a sa couleur.</h2>
+<p class="v-lead">Jaune pour le Gouda, rouge pour l’Edam, bleu pour le Maasdam, vert pour le Cheddar : la gamme se reconnaît au premier coup d’œil en rayon.</p>
+</div>
+<div class="v-rail" id="rail"></div>
+<div class="v-rail-nav"><button aria-label="Précédent" data-dir="-1">‹</button><button aria-label="Suivant" data-dir="1">›</button></div>
+</section>
+
+<section class="v-sec">
+<div class="v-wrap">
+<h2 class="v-h2"><span class="v-sc">Laitages du Maghreb</span>Fait ici, servi partout.</h2>
+<div class="v-promise">
+<div><b>El Achour, Alger</b><span>Le site de production de Laitages du Maghreb, en zone d’activité.</span></div>
+<div><b>Sécurité des aliments</b><span>Un Système de Management de la Sécurité des Denrées Alimentaires suivi à chaque étape.</span></div>
+<div><b>73 références</b><span>Fromages, crèmes, râpés, sauces et poudres de lait sous Matino, Matino Joy et Lâatra.</span></div>
+</div>
+</div>
+</section>
+
+<section class="v-cta" id="contact">
+<div class="v-wrap">
+<h2 class="v-h2"><span class="v-sc">Distributeurs et restaurateurs</span>Mettez Matino en rayon.</h2>
+<div class="v-cta-grid">
+<div class="v-info">
+<p>Zone d’activité, Groupe 665, Lot 01, N°01 et 02, El Achour, Alger</p>
+<a href="tel:+213561627001">+213 561 62 70 01 / 02 / 03 / 05</a>
+<a href="mailto:contact@laitagesdumaghreb.com">contact@laitagesdumaghreb.com</a>
+<p style="border:0"><a href="../professionnels.html" style="display:inline;color:var(--red);font-size:16px;border:0">Estimer mon besoin en fromage</a></p>
+</div>
+<form class="v-form" data-fake>
+<input required placeholder="Nom et société" aria-label="Nom et société">
+<input required type="tel" inputmode="tel" placeholder="Téléphone" aria-label="Téléphone">
+<select aria-label="Vous êtes"><option>Grossiste / distributeur</option><option>Pizzeria, fast-food, traiteur</option><option>Superette</option><option>Particulier</option></select>
+<textarea rows="3" placeholder="Votre message" aria-label="Message"></textarea>
+<button type="submit">Être rappelé</button>
+</form>
+</div>
+</div>
+<iframe class="v-map" title="Carte : Laitages du Maghreb, El Achour" loading="lazy" src="https://maps.google.com/maps?q=SARL%20Laitage%20du%20Maghreb%20El%20Achour&t=m&z=15&output=embed"></iframe>
+</section>
+</main>
+<footer class="v-foot"><div class="v-wrap"><span>© 2026 SARL Laitages du Maghreb · Matino®</span><a href="../produits.html">Catalogue complet</a></div></footer>
+
+<script src="../js/data.js"></script>
+<script src="../js/common.js"></script>
+<script src="v2.js"></script>
+</body>
+</html>

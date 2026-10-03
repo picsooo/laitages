@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr" data-version="corporate" data-base="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Produit · Laitages du Maghreb</title>
+<meta name="description" content="Fiche produit Matino.">
+<link rel="icon" href="img/logo-laitages.webp">
+<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="ldm-top"><div class="ldm-wrap"><a href="tel:+213561627001">+213 561 62 70 01</a><span class="hide-s">Zone d’activité, El Achour, Alger</span><a href="mailto:contact@laitagesdumaghreb.com">contact@laitagesdumaghreb.com</a></div></div>
+<header class="ldm-head"><div class="ldm-wrap">
+<a class="ldm-logo" href="index.html" aria-label="Laitages du Maghreb, accueil"><img src="img/logo-laitages.webp" alt="Laitages du Maghreb" width="270" height="160"></a>
+<nav class="ldm-nav" data-nav aria-label="Navigation principale">
+<a href="index.html">Accueil</a><a href="produits.html">Nos produits</a><a href="index.html#qualite">L’entreprise</a><a href="professionnels.html">Professionnels</a><a href="contact.html">Contact</a>
+<a class="ldm-btn ldm-btn--red" href="professionnels.html#distributeur">Devenir distributeur</a>
+</nav>
+<button class="ldm-burger" data-burger aria-label="Menu" aria-expanded="false"><span></span></button>
+</div></header>
+<main>
+
+<section class="ldm-wrap"><div class="ldm-pd" id="pd"></div></section>
+<section class="ldm-sec ldm-sec--wash"><div class="ldm-wrap"><h2 class="ldm-h2">Dans la même famille</h2><div class="ldm-grid" id="rel"></div></div></section>
+</main>
+<footer class="ldm-foot"><div class="ldm-wrap">
+<div class="ldm-foot-grid">
+<div><img src="img/logo-laitages.webp" alt="Laitages du Maghreb"><p style="margin-top:14px;max-width:34ch">Opérateur de l’industrie alimentaire spécialisé dans les laitages : fromages, crèmes, sauces et poudres de lait, sous les marques Matino, Matino Joy et Lâatra.</p></div>
+<div><h4>Produits</h4><a href="produits.html?f=À tartiner">À tartiner</a><a href="produits.html?f=Râpé">Râpé</a><a href="produits.html?f=Poudre de lait">Poudre de lait</a><a href="produits.html?f=Sauce Mayonnaise">Mayonnaise</a></div>
+<div><h4>Société</h4><a href="index.html#qualite">Qualité</a><a href="professionnels.html">Professionnels</a><a href="professionnels.html#distributeur">Distributeurs</a><a href="contact.html">Contact</a></div>
+<div><h4>Nous trouver</h4><p>Zone d’activité, Groupe 665, Lot 01, N°01 et 02, El Achour, Alger</p><a href="tel:+213561627001">+213 561 62 70 01 / 02 / 03 / 05</a><a href="mailto:contact@laitagesdumaghreb.com">contact@laitagesdumaghreb.com</a></div>
+</div>
+<div class="ldm-foot-bottom"><span>© 2026 SARL Laitages du Maghreb</span><span>Maquette Webminds</span></div>
+</div></footer>
+<script src="js/common.js"></script>
+<script src="js/data.js"></script>
+<script>
+window.LDM_card=function(p){
+  var a=document.createElement('a');a.className='ldm-card';a.href='produit.html?id='+p.id;
+  a.innerHTML='<div class="ldm-card-img" data-pimg="'+p.name+'"><img loading="lazy" alt="'+p.name+'" src="'+p.img+'"'+(p.remote?' class="is-remote" onerror="LDM_imgFallback(this)"':'')+'></div><div class="ldm-card-brand">'+p.brand+'</div><h3>'+p.name+'</h3><div class="ldm-card-fmt">'+p.format+'</div>';
+  return a;
+};
+</script>
+<script>
+(function(){
+  var id=new URLSearchParams(location.search).get('id');
+  var p=LDM_PRODUCTS.filter(function(x){return x.id===id;})[0]||LDM_PRODUCTS[0];
+  document.title=p.name+' · Matino · Laitages du Maghreb';
+  var el=document.getElementById('pd');
+  el.innerHTML='<div class="ldm-pd-visual" data-pimg="'+p.name+'"><img class="sun" src="img/sun.svg" alt="" aria-hidden="true"><img src="'+p.img+'" alt="'+p.name+'"'+(p.remote?' class="is-remote" onerror="this.remove()"':'')+'></div>'+
+  '<div><div class="ldm-crumbs" style="color:var(--muted)"><a style="color:var(--sky)" href="produits.html">Nos produits</a> / '+p.cat+'</div>'+
+  '<h1>'+p.name+'</h1><div class="ldm-pd-meta"><span class="ldm-tag ldm-tag--red">'+p.brand+'</span><span class="ldm-tag">'+p.cat+'</span><span class="ldm-tag">'+p.format+'</span></div>'+
+  '<h2 style="font-size:22px;margin-top:30px">Idéal pour</h2><div class="ldm-pd-uses">'+p.use.map(function(u){return '<div>'+u+'</div>';}).join('')+'</div>'+
+  '<table class="ldm-pd-table"><tr><td>Marque</td><td>'+p.brand+'</td></tr><tr><td>Famille</td><td>'+p.cat+'</td></tr><tr><td>Conditionnement</td><td>'+p.format+'</td></tr><tr><td>Conservation</td><td>Selon emballage</td></tr><tr><td>Fiche technique</td><td>Sur demande</td></tr></table>'+
+  '<p style="margin-top:16px"><span class="ldm-tovalidate">Composition et valeurs nutritionnelles à fournir par Laitages du Maghreb</span></p>'+
+  '<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px"><a class="ldm-btn ldm-btn--red" href="professionnels.html#distributeur">Commander en gros</a><a class="ldm-btn ldm-btn--ghost" href="contact.html">Demander la fiche technique</a></div></div>';
+  var rel=document.getElementById('rel');
+  LDM_PRODUCTS.filter(function(x){return x.id!==p.id&&(x.cat===p.cat||x.brand===p.brand)&&!x.remote;}).slice(0,4).forEach(function(x){rel.appendChild(LDM_card(x));});
+})();
+</script>
+</body>
+</html>
