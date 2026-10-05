@@ -59,6 +59,5 @@ window.LDM_card=function(p){
   var rel=document.getElementById('rel');
   LDM_PRODUCTS.filter(function(x){return x.id!==p.id&&(x.cat===p.cat||x.brand===p.brand)&&!x.remote;}).slice(0,4).forEach(function(x){rel.appendChild(LDM_card(x));});
 })();
-</script>
-<script src="https://radar-xi-flax.vercel.app/t.js" defer></script></body>
+</script></body>
 </html>
